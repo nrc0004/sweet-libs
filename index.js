@@ -9,19 +9,16 @@ app.get('/', function (req, res){
 
   url = 'https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-1'
 
-  //app code that makes it work
 
   request(url, function(error, response, html){
     if(!error){
       var $ = cheerio.load(html)
-      var title, release, rating
+      var population
       var json = { population: ""}
 
       $('#cell51').filter(function(){
         var data = $(this)
         population = data.html()
-
-        console.log(population)
 
         json.population = population;
         res.send(population)
