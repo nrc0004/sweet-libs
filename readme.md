@@ -38,6 +38,5 @@ Technologies learned: Request and Cheerio
   3. What crawler did you use?
 
 - Instructions to install:
-  1. run npm install
-  2. run npm install --save request, cheerio, express
-  3. Go to local host 4000 and hit the root directory
+  1. run npm install --save request cheerio express
+  2. Go to local host 4000 and hit the root directory
