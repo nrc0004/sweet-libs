@@ -1,0 +1,25 @@
+{
+  "name": "sweet-libs",
+  "version": "1.0.0",
+  "description": "Today is an all-day structured exercise in developing the skill you're likely to use most in the Industry: teaching yourself something new.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nrc0004/sweet-libs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nrc0004/sweet-libs/issues"
+  },
+  "homepage": "https://github.com/nrc0004/sweet-libs#readme",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "express": "^4.15.2",
+    "request": "^2.81.0"
+  }
+}
