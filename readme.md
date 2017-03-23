@@ -39,4 +39,5 @@ Technologies learned: Request and Cheerio
 
 - Instructions to install:
   1. run npm install --save request cheerio express
-  2. Go to local host 4000 and hit the root directory
+  2. run node index.js
+  3. Go to local host 4000 and hit the root directory
