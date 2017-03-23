@@ -1,80 +1,43 @@
-# Sweet Libs
+Technologies learned: Request and Cheerio
 
-Today is an all-day structured exercise in developing the skill you're likely to use most in the Industry: teaching yourself something new.
+1. What is Request?
 
-By yourself or with one or more others of your choosing, please pick a useful library or technology we have not covered in class.
+- Request is a dependency that allows you to make http calls from Node.js
+- Super simple to use
+- Can be inserted into express controller logic so it makes http calls when you send a request to the server running your node file
+- Invented by Mikeal Rogers http://mikealrogers.com/
 
-## Grouping
+2. What is Cheerio
 
-It's no secret that learning on your own is something you can do outside of GA. However, more often than not, you will be expected to learn things on your own in a vacuum. This is an exercise in *learning to learn*, rather than in learning a new technology. You'll get the greatest amount of value collaborating with someone else: note what they picked up and how.
+- Cheerio is a dependency that implements a subset of JQuery's functionality and streamlines it for the server side
+- Uses the familiar JQuery syntax
+- It can parse nearly any html or xhtml
+- In the context of our app it is used to pick out particular DOM elements from the page that you just pulled in using Request
+- Mainly developed by Mathew Mueller (if commits are any indication) https://github.com/matthewmueller
 
-Additionally, you'll have to do a fraction of the work: one person can work on the documentation, another can work on the example code, and so on.
+3. What is Web Scraping?
 
-That said, we left the groupings open-ended to provide an opportunity for those who really want some dedicated time to research a topic to do so at their leisure. But for the rest of you, grouping will provide a definite long-term advantage.
+- Web scraping is what people used to do when they wanted to grab some data off a website (before APIs), it is a method for pulling in the html from a site, searching it for data that fits a particular description and then doing something with that data (maybe persisting it, maybe displaying it on a different site, maybe analyzing it).
+- BE ADVISED: Web Scraping is on shaky ground legally, if you do it on certain pages then it may constitute breaking and entering. See this post for an overview of the legality of web scraping and some guidelines on how to scrape without getting sued: http://blog.icreon.us/advise/web-scraping-legality
 
-**The only limitation to grouping is that a team can have a maximum of three people.**
+4. Our project:
 
-## Build Something
-
-Create an app that demonstrates your subject. It should...
-- Be published to a Github repository.
-- Be very small, with no more than 50 total lines of code, if possible (**excluding comments**).
-- Be well-commented with notes.
-- Be a good example of why someone might want to use your code.
-- **DO NOT** follow the [DTROTFO](https://i.imgur.com/RadSf.jpg) methodology.
-
-> Once you complete all the above requirements, you may go on to build something larger than 50 lines if you'd like.
-
-## Document It
-
-Your repository must include a `readme.md` that answers the following questions regarding your subject. No need to write a book!
-
-- Why did you choose this subject?
-  - How were you first made aware of it?
-- What problem does it solve?
-  - How does it solve the problem (conceptually)?
-- Why does one use it?
-  - What are the alternatives?
-  - What is it similar to, if anything?
-- What is the history of this technology?
-  - Who built it and why?
-  - Who is maintaining it?
-- What is your opinion on the technology after having built something with it?
-- What are the biggest conceptual hurdles (if any) you encountered when researching this?
-- What resources do you recommend for interested students?
-  - What article or forum was most helpful to you in learning this?
+- Our project is a basic web scraper that we wrote to scrape crime data off the FBI website. (here: https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-1)
+- It's built using Node.js, Express, Request, and Cheerio
+- For a great tutorial on how to build a similar scraper see here: https://scotch.io/tutorials/scraping-the-web-with-node-js
+- Why we chose this: It's baller
+- How were we first made aware of it? Isaac was made aware of this topic when he looked at GA's course offerings and saw the data science immersive.
+- What problems does it solve? A fully tricked out version of this app would allow you to grab all the data you need from the FBI's website without having to copy and paste or download all their data. It does this by fully automating the process of copying and pasting their data.
+- Why does one use it? Cause the data you want isn't available via API yet.
+- What is your opinion on the technology after using it: Absurdly powerful tool that we didn't know existed before this.
+- What are the biggest conceptual hurdles (if any) you encountered when researching this? No *conceptual* hurdles of note.
+- What resources do you recommend for interested students? Interested students should look at all the links I already posted all around in this area ^^^
 - What are 3 interview questions one might be asked about this technology?
+  1. Have you done it?
+  2. Did it work?
+  3. What crawler did you use?
 
-Also, please include the instructions necessary to...
-
-- Run your example.
-  - Do I need to run `bower install`? Do I need an API key?
-- Use your subject.
-  - Do I need to include it in my HTML with `<script>` tags? Do I need to `brew install` anything? Can I deploy it to Heroku?
-
-## Suggestions for Subjects
-
-You may chose from but are not limited to following...
-
-- [Phaser JS](http://phaser.io/)
-- [Three.js](http://threejs.org/)
-- [Angular 2](https://angular.io/)
-- [Vue.js](https://vuejs.org/)
-- [Meteor](https://www.meteor.com/)
-- [Ember.js](http://emberjs.com/)
-- [Backbone](http://backbonejs.org/)
-- Python / [Django](https://www.djangoproject.com/)
-- [Elm](http://elm-lang.org/)
-
-> **DO NOT** pick React since we will be learning about that next week.
-
-## Deliverables
-
-**NO LATER THAN 11:00AM:** Each team must submit a Git issue to the `sweet-libs` repository indicating...
-- What technology you are learning
-- Who is on the team
-
-**NO LATER THAN 5:00PM:** The issue must be updated to include...
-- A link to your main repository that contains a `readme.md` and code
-- A comfort score (out of 5)
-- **(Optional)** A reference to any particular sections of your code that you would like the instructors to review, and specific questions to guide instructor feedback
+- Instructions to install:
+  1. run npm install
+  2. run npm install --save request, cheerio, express
+  3. Go to local host 4000 and hit the root directory
