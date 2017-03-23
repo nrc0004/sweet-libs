@@ -13,21 +13,19 @@ app.get('/', function (req, res){
   request(url, function(error, response, html){
     if(!error){
       var $ = cheerio.load(html)
-      var population
-      var json = { population: ""}
+      var population_this_here
 
       $('#cell51').filter(function(){
-        var data = $(this)
-        population = data.html()
+        let data = $(this)
+        var population = data.html()
+        console.log("firing now!")
+        res.write(population)
 
-        json.population = population;
-        res.send(population)
       })
+        res.send(population_this_here)
     }
   })
 })
 
 app.listen('4000')
 console.log('Scraping faces on 4k')
-
-exports = module.exports = app
